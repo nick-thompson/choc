@@ -345,7 +345,7 @@ struct choc::ui::WebView::Pimpl
         using namespace choc::objc;
         AutoReleasePool autoreleasePool;
         auto s = call<id> (call<id> (getClass ("WKUserScript"), "alloc"), "initWithSource:injectionTime:forMainFrameOnly:",
-                                     getNSString (script), WKUserScriptInjectionTimeAtDocumentStart, (BOOL) 1);
+                                     getNSString (script), WKUserScriptInjectionTimeAtDocumentStart, (BOOL) 0);
         call<void> (manager, "addUserScript:", s);
         call<void> (s, "release");
     }
